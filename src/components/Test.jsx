@@ -52,9 +52,9 @@ export default function Test() {
     <div className="relative flex items-center justify-center w-full max-w-[500px]">
       {/* Multiple neon glow effects layered for depth */}
       <div className="absolute inset-0 bg-blue-500 rounded-xl blur-xl opacity-20"></div>
-      <div className="absolute inset-0 bg-purple-600 rounded-xl blur-xl opacity-20 rotate-12"></div>
+      <div className="absolute inset-0 bg-purple-600 rounded-xl blur-xl opacity-20 rotate-3"></div>
       <div className="absolute inset-0 bg-blue-400 rounded-xl blur-2xl opacity-10"></div>
-      <div className="absolute inset-0 bg-purple-500 rounded-xl blur-3xl opacity-10 -rotate-6"></div>
+      <div className="absolute inset-0 bg-purple-500 rounded-xl blur-3xl opacity-10 -rotate-3"></div>
       
       {/* Card with stronger gradient border */}
       <div className="p-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl w-full max-w-md relative z-10 shadow-lg">

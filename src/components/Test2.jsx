@@ -72,7 +72,7 @@ export default function Test2() {
               {Array.from({ length: userTickets }).map((_, index) => (
                 <div 
                   key={index} 
-                  className="relative bg-gray-800 text-gray-400 w-[74px] h-[74px] rounded flex items-center justify-center border border-gray-700"
+                  className="relative bg-gray-800 text-gray-400 w-[60px] h-[60px] rounded flex items-center justify-center border border-gray-700"
                 >
                     <div className='absolute inset-0'>
                         <img src={ticket} alt="" />
