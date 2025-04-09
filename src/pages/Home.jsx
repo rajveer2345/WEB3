@@ -63,7 +63,7 @@ function Home() {
                         </div>
 
                         {/* counter */}
-                        <div className='w-full flex flex-col items-center pt-10 pb-6 gap-8 overflow-clip'>
+                        <div className='w-full flex flex-col items-center pt-8 pb-6 gap-8 overflow-clip px-4'>
 
                         <marquee className="text-[#f2f2fa] text-base font-normal w-full max-w-[800px]">Last winner: 0x3D32b05544608F993c4666b3894c6B93b2A7C609 <span className="text-2xl"> 🎊</span></marquee>
 
