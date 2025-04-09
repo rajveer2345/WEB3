@@ -27,6 +27,8 @@ function Home() {
                     <h1 className='text-[32px] text-white font-bold leading-10 mt-5'>THE BLOCKJACK DRAW</h1>
                     <p className='text-sm text-white font-normal'>Get started by logging in with Your MetaMask</p>
 
+                    <a className='text-white py-1 px-4 mt-6 bg-purple-400 rounded-lg' href="https://metamask.app.link/dapp/gameon-3ewd.onrender.com">connect on mobile</a>
+
                     <button onClick={() => { setHome(true) }} style={{
                         backgroundImage: 'linear-gradient(190deg, #6262D9, #9D62D9)',
                     }} className='px-6 py-3 text-xs font-semibold text-white rounded-[8px] mt-10 mb-14 cursor-pointer shadow-md'> Login with MetaMask
