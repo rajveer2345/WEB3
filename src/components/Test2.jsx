@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import ticket from "../assets/ticket.svg"
 
 export default function Test2() {
   const [ticketCount, setTicketCount] = useState(1);
@@ -21,16 +22,13 @@ export default function Test2() {
   };
   
   return (
-    <div className="relative flex items-center justify-center w-full max-w-lg p-8">
+    <div className="relative flex items-center justify-center w-full max-w-[500]">
       {/* Multiple neon glow effects layered for depth */}
-      <div className="absolute inset-0 bg-blue-500 rounded-xl blur-xl opacity-20"></div>
-      <div className="absolute inset-0 bg-purple-600 rounded-xl blur-xl opacity-20 rotate-12"></div>
-      <div className="absolute inset-0 bg-blue-400 rounded-xl blur-2xl opacity-10"></div>
-      <div className="absolute inset-0 bg-purple-500 rounded-xl blur-3xl opacity-10 -rotate-6"></div>
+
       
       {/* Card with stronger gradient border */}
-      <div className="p-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl w-full max-w-md relative z-10 shadow-lg">
-        <div className="bg-gray-900 rounded-lg p-5 flex flex-col gap-4 w-full relative">
+      <div className="  rounded-xl w-full max-w-md relative z-10 shadow-lg">
+        <div className="bg-gray-900 rounded-lg p-5 flex flex-col gap-4 w-full relative border border-[#6262D9]/50">
           
           {/* Ticket Price Info */}
           <div className="flex justify-between items-center text-gray-50 border-b border-gray-800 pb-3">
@@ -70,23 +68,25 @@ export default function Test2() {
           {/* User Tickets Display */}
           <div className="mt-3">
             <p className="text-gray-300 mb-3">You have {userTickets} Tickets in this draw</p>
-            <div className="grid grid-cols-8 gap-2">
+            <div className="flex flex-wrap justify-start gap-2">
               {Array.from({ length: userTickets }).map((_, index) => (
                 <div 
                   key={index} 
-                  className="bg-gray-800 text-gray-400 w-8 h-8 rounded flex items-center justify-center border border-gray-700"
+                  className="relative bg-gray-800 text-gray-400 w-[74px] h-[74px] rounded flex items-center justify-center border border-gray-700"
                 >
-                  {index + 1}
+                    <div className='absolute inset-0'>
+                        <img src={ticket} alt="" />
+                    </div>
+
+                    <div className='ablosute inset-0 flex justify-center items-center z-50 text-[#f2f2fa]/75 text-[24px] font-semibold'> {index + 1}</div>
+                 
                 </div>
               ))}
             </div>
           </div>
         </div>
       </div>
-      
-      {/* Additional subtle glow effects */}
-      <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-blue-500 rounded-full blur-xl opacity-20"></div>
-      <div className="absolute -top-4 -left-4 w-20 h-20 bg-purple-600 rounded-full blur-xl opacity-20"></div>
+
     </div>
   );
 }

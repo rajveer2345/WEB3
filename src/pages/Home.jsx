@@ -63,7 +63,7 @@ function Home() {
                         </div>
 
                         {/* counter */}
-                        <div className='w-full flex flex-col items-center pt-6 pb-10'>
+                        <div className='w-full flex flex-col items-center pt-6 pb-6 gap-10'>
 
 
                                 {/* <div className="bg-[#161719] rounded-xl p-5 flex flex-col gap-4 w-full relative">

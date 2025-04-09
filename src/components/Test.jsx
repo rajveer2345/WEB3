@@ -49,7 +49,7 @@ export default function Test() {
   };
 
   return (
-    <div className="relative flex items-center justify-center w-full max-w-lg p-8">
+    <div className="relative flex items-center justify-center w-full max-w-[500px]">
       {/* Multiple neon glow effects layered for depth */}
       <div className="absolute inset-0 bg-blue-500 rounded-xl blur-xl opacity-20"></div>
       <div className="absolute inset-0 bg-purple-600 rounded-xl blur-xl opacity-20 rotate-12"></div>
