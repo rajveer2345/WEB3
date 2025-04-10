@@ -4,6 +4,7 @@ import { BrowserProvider, Contract, formatUnits, parseUnits } from 'ethers';
 import { LOTTERY_ABI, LOTTERY_CONTRACT_ADDRESS, USDT_ABI, USDT_CONTRACT_ADDRESS } from '../src/contract/details';
 import Home from './pages/Home';
 import Test from './components/Test';
+import WalletConnectButton from './components/WalletConnectButton';
 
 function App() {
   const [state, setState] = useState({
@@ -285,7 +286,8 @@ function App() {
     //     <button onClick={buyTickets} className='bg-green-300 rounded-xl p-4 hover:bg-green-500 cursor-pointer'>buy ticket</button>
     //   </div>
     // </div>
-    <Home/>
+    // <Home/>
+       <WalletConnectButton/>
 
   );
 }
