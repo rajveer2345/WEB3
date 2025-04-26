@@ -10,11 +10,11 @@ import Marquee from "react-fast-marquee";
   
 
 const Home: React.FC = () => {
-    const [home, setHome] = useState<boolean>(false);
+    const [home, setHome] = useState<boolean>(true);
 
     return (
         <div className="w-full min-h-screen">
-            {false ? (
+            {!home ? (
                 <div
                     style={{ backgroundImage: `url(${background})` }}
                     className="w-full h-screen bg-center bg-cover flex flex-col justify-center items-center relative"
