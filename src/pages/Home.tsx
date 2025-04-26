@@ -14,7 +14,7 @@ const Home: React.FC = () => {
 
     return (
         <div className="w-full min-h-screen">
-            {!home ? (
+            {false ? (
                 <div
                     style={{ backgroundImage: `url(${background})` }}
                     className="w-full h-screen bg-center bg-cover flex flex-col justify-center items-center relative"
