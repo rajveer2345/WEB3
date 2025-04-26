@@ -1,12 +1,17 @@
-# React + Vite
+# Reown AppKit Example using wagmi (Vite + React)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a [Vite](https://vitejs.dev) project together with React.
 
-Currently, two official plugins are available:
+## Usage
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. Go to [Reown Cloud](https://cloud.reown.com) and create a new project.
+2. Copy your `Project ID`
+3. Rename `.env.example` to `.env` and paste your `Project ID` as the value for `VITE_PROJECT_ID`
+4. Run `pnpm install` to install dependencies
+5. Run `pnpm run dev` to start the development server
 
-## Expanding the ESLint configuration
+## Resources
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- [Reown — Docs](https://docs.reown.com)
+- [Vite — GitHub](https://github.com/vitejs/vite)
+- [Vite — Docs](https://vitejs.dev/guide/)

@@ -1,33 +1,28 @@
 import { useState } from 'react';
-import ticket from "../assets/ticket.svg"
+import ticket from "../assets/ticket.svg";
 
 export default function Test2() {
-  const [ticketCount, setTicketCount] = useState(1);
-  const pricePerTicket = 0.01;
-  const serviceFee = 0.001;
-  const currency = "MATIC";
-  const userTickets = 8;
-  
-  const totalCost = (ticketCount * pricePerTicket).toFixed(2);
-  
-  // Handle ticket count changes
-  const handleIncreaseTicket = () => {
+  const [ticketCount, setTicketCount] = useState<number>(1);
+  const pricePerTicket: number = 0.01;
+  const serviceFee: number = 0.001;
+  const currency: string = "MATIC";
+  const userTickets: number = 8;
+
+  const totalCost: string = (ticketCount * pricePerTicket).toFixed(2);
+
+  const handleIncreaseTicket = (): void => {
     setTicketCount(prev => prev + 1);
   };
-  
-  const handleDecreaseTicket = () => {
+
+  const handleDecreaseTicket = (): void => {
     if (ticketCount > 1) {
       setTicketCount(prev => prev - 1);
     }
   };
-  
-  return (
-    <div className="relative flex items-center justify-center w-full max-w-[500]">
-      {/* Multiple neon glow effects layered for depth */}
 
-      
-      {/* Card with stronger gradient border */}
-      <div className="  rounded-xl w-full max-w-md relative z-10 shadow-lg">
+  return (
+    <div className="relative flex items-center justify-center w-full max-w-[500px]">
+      <div className="rounded-xl w-full max-w-md relative z-10 shadow-lg">
         <div className="bg-gray-900 rounded-lg p-5 flex flex-col gap-4 w-full relative border border-[#6262D9]/50">
           
           {/* Ticket Price Info */}
@@ -39,8 +34,10 @@ export default function Test2() {
           {/* Ticket Counter */}
           <div className="flex justify-between items-center text-gray-50">
             <p className="text-gray-50 font-medium">TICKETS</p>
-            <div className="flex items-center">
+            <div className="flex items-center gap-2">
+              <button onClick={handleDecreaseTicket} className="bg-gray-700 px-3 py-1 rounded text-white hover:bg-gray-600">-</button>
               <p className="text-xl font-medium px-4">{ticketCount}</p>
+              <button onClick={handleIncreaseTicket} className="bg-gray-700 px-3 py-1 rounded text-white hover:bg-gray-600">+</button>
             </div>
           </div>
           
@@ -74,19 +71,18 @@ export default function Test2() {
                   key={index} 
                   className="relative bg-gray-800 text-gray-400 w-[60px] h-[60px] rounded flex items-center justify-center border border-gray-700"
                 >
-                    <div className='absolute inset-0'>
-                        <img src={ticket} alt="" />
-                    </div>
-
-                    <div className='ablosute inset-0 flex justify-center items-center z-50 text-[#f2f2fa]/75 text-[24px] font-semibold'> {index + 1}</div>
-                 
+                  <div className="absolute inset-0">
+                    <img src={ticket} alt={`Ticket ${index + 1}`} className="w-full h-full object-contain" />
+                  </div>
+                  <div className="absolute inset-0 flex justify-center items-center z-10 text-[#f2f2fa]/75 text-[24px] font-semibold">
+                    {index + 1}
+                  </div>
                 </div>
               ))}
             </div>
           </div>
         </div>
       </div>
-
     </div>
   );
 }

@@ -1,9 +1,16 @@
 import { useState, useEffect } from 'react';
 
+interface TimeLeft {
+  days: number;
+  hours: number;
+  minutes: number;
+  seconds: number;
+}
+
 export default function Test() {
   // Simple countdown component
   const Countdown = () => {
-    const [timeLeft, setTimeLeft] = useState({
+    const [timeLeft, setTimeLeft] = useState<TimeLeft>({
       days: 2,
       hours: 14,
       minutes: 35,
@@ -31,16 +38,15 @@ export default function Test() {
     
     return (
       <div className="flex justify-between gap-2 text-white">
-
         <div className="bg-gray-800 px-2 py-3 rounded-lg text-center flex-1">
           <p className="text-3xl font-bold">{timeLeft.hours}</p>
           <p className="text-xs text-gray-400">Hours</p>
         </div>
-        <div className="bg-gray-800 px-2 py-3  rounded-lg text-center flex-1">
+        <div className="bg-gray-800 px-2 py-3 rounded-lg text-center flex-1">
           <p className="text-3xl font-bold">{timeLeft.minutes}</p>
           <p className="text-xs text-gray-400">Minutes</p>
         </div>
-        <div className="bg-gray-800 px-2 py-3  rounded-lg text-center flex-1">
+        <div className="bg-gray-800 px-2 py-3 rounded-lg text-center flex-1">
           <p className="text-3xl font-bold">{timeLeft.seconds}</p>
           <p className="text-xs text-gray-400">Seconds</p>
         </div>
