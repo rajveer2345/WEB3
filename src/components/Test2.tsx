@@ -1,11 +1,17 @@
 import { useState } from 'react';
 import ticket from "../assets/ticket.svg";
 
-export default function Test2() {
+interface Test1Props {
+  getTickets: any;
+  address:any;
+  buyTickets:any;
+}
+
+export default function Test2({getTickets, address, buyTickets}:Test1Props) {
   const [ticketCount, setTicketCount] = useState<number>(1);
-  const pricePerTicket: number = 0.01;
-  const serviceFee: number = 0.001;
-  const currency: string = "MATIC";
+  const pricePerTicket: number = 10.00;
+  const serviceFee: number = 0;
+  const currency: string = "USDT";
   const userTickets: number = 8;
 
   const totalCost: string = (ticketCount * pricePerTicket).toFixed(2);
@@ -35,9 +41,9 @@ export default function Test2() {
           <div className="flex justify-between items-center text-gray-50">
             <p className="text-gray-50 font-medium">TICKETS</p>
             <div className="flex items-center gap-2">
-              <button onClick={handleDecreaseTicket} className="bg-gray-700 px-3 py-1 rounded text-white hover:bg-gray-600">-</button>
+              <button disabled={ticketCount<2} onClick={handleDecreaseTicket} className="cursor-pointer disabled:cursor-no-drop bg-gray-700 px-3 py-1 rounded text-white hover:bg-gray-600">-</button>
               <p className="text-xl font-medium px-4">{ticketCount}</p>
-              <button onClick={handleIncreaseTicket} className="bg-gray-700 px-3 py-1 rounded text-white hover:bg-gray-600">+</button>
+              <button disabled={ticketCount>9} onClick={handleIncreaseTicket} className="cursor-pointer disabled:cursor-no-drop bg-gray-700 px-3 py-1 rounded text-white hover:bg-gray-600">+</button>
             </div>
           </div>
           
@@ -58,15 +64,15 @@ export default function Test2() {
           </div>
           
           {/* Purchase Button */}
-          <button className="w-full bg-gray-700 text-white py-3 rounded-md mt-3 hover:bg-gray-600 transition duration-200">
+          <button disabled={ticketCount>10} onClick={()=>{buyTickets(ticketCount)}} className="disabled:cursor-no-drop cursor-pointer w-full bg-gray-700 text-white py-3 rounded-md mt-3 hover:bg-gray-600 transition duration-200">
             Buy {ticketCount} {ticketCount > 1 ? 'tickets' : 'ticket'} for {totalCost} {currency}
           </button>
           
           {/* User Tickets Display */}
           <div className="mt-3">
-            <p className="text-gray-300 mb-3">You have {userTickets} Tickets in this draw</p>
+            <p className="text-gray-300 mb-3">You have {Array.isArray(getTickets) ? getTickets.filter((item)=>item == address).length : 0} Tickets in this draw</p>
             <div className="flex flex-wrap justify-start gap-2">
-              {Array.from({ length: userTickets }).map((_, index) => (
+              {Array.isArray(getTickets) && getTickets.filter((item)=>item == address).map((_, index) => (
                 <div 
                   key={index} 
                   className="relative bg-gray-800 text-gray-400 w-[60px] h-[60px] rounded flex items-center justify-center border border-gray-700"
