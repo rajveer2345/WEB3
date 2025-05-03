@@ -386,7 +386,7 @@ const wagmiContractConfig = {
 
 const Home = () => {
   // State management
-  const [isLandingPage, setIsLandingPage] = useState(true);
+  const [isLandingPage, setIsLandingPage] = useState(false);
   const [loading, setLoading] = useState(false);
   const [txHash, setTxHash] = useState();
   
