@@ -47,43 +47,67 @@ const Home = () => {
     const { data: ticketsLeft } = useReadContract({
         ...wagmiContractConfig,
         functionName: 'RemainingTickets',
-    });
+        query: {
+            refetchInterval: 4000
+        }
+    }) as { data: bigint | undefined };
 
     const { data: expiration } = useReadContract({
         ...wagmiContractConfig,
         functionName: 'expiration',
-    });
+        query: {
+            refetchInterval: 30000
+        }
+    }) as { data: bigint | undefined };
 
     const { data: lotteryOperator } = useReadContract({
         ...wagmiContractConfig,
         functionName: 'lotteryOperator',
-    });
+        query: {
+            refetchInterval: 4000
+        }
+    }) as { data: `0x${string}` | undefined };
 
     const { data: currentWinningReward } = useReadContract({
         ...wagmiContractConfig,
         functionName: 'CurrentWinningReward',
-    });
+        query: {
+            refetchInterval: 4000
+        }
+    }) as { data: bigint | undefined };
 
     const { data: userTickets } = useReadContract({
         ...wagmiContractConfig,
         functionName: 'getTickets',
-    });
+        query: {
+            refetchInterval: 4000
+        }
+    }) as { data: bigint | undefined };
 
 
     const { data: lastWinner } = useReadContract({
         ...wagmiContractConfig,
         functionName: 'lastWinner',
+        query: {
+            refetchInterval: 4000
+        }
     }) as { data: `0x${string}` | undefined };
 
     const { data: winnings } = useReadContract({
         ...wagmiContractConfig,
         functionName: 'winnings',
-        args: address ? [address] : undefined
+        args: address ? [address] : undefined,
+        query: {
+            refetchInterval: 4000
+        }
     }) as { data: bigint | undefined };;
 
     const { data: operatorTotalCommission } = useReadContract({
         ...wagmiContractConfig,
         functionName: 'operatorTotalCommission',
+        query: {
+            refetchInterval: 30000
+        }
     }) as { data: bigint | undefined };
 
     // Transaction handlers
@@ -152,7 +176,6 @@ const Home = () => {
                     functionName: 'BuyTickets',
                     args: [numTickets],
                 });
-
 
                 await waitForTransactionReceipt(config, { hash: buyTx });
                 toast.dismiss(buyToastId);
