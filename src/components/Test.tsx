@@ -1,9 +1,6 @@
 import { useState, useEffect } from 'react';
 
 interface TestProps {
-  getTickets: any;
-  getWinningsForAddress: any;
-  checkWinningsAmount: any;
   remainingTickets:any;
   CurrentWinningReward:any;
   expiration:any
@@ -63,7 +60,7 @@ const Countdown = ({ expiration }: CountdownProps) => {
 };
 
 
-export default function Test({ getTickets, getWinningsForAddress, checkWinningsAmount, remainingTickets, CurrentWinningReward, expiration }: TestProps) {
+export default function Test({ remainingTickets, CurrentWinningReward, expiration }: TestProps) {
   function formatUSDT(amount: bigint) {
     const decimals = 18n; 
     const divisor = 10n ** decimals; 

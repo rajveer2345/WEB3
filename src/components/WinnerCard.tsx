@@ -1,8 +1,13 @@
 import { Star } from 'lucide-react';
 
-export default function WinnerCard({winnings, withdrawWinnings}) {
+type WinnerCardProps = {
+  winnings: bigint;
+  withdrawWinnings: () => void;
+};
+
+
+export default function WinnerCard({winnings, withdrawWinnings}:WinnerCardProps) {
   const winnerName = "Congratulations! You are the winner";
-  const winningAmount = 900;
   const currency = "USDT";
 
   function formatUSDT(amount: bigint) {

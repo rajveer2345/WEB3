@@ -1,7 +1,15 @@
 import { Trophy, ArrowDown, RotateCcw, RotateCw } from 'lucide-react';
 
-export default function AdminControls({operatorTotalCommission, withdrawCommission, drawWinner,  restartDraw, refundAll}) {
-  const commissionAmount = 0.018;
+type AdminControlsProps = {
+  operatorTotalCommission: bigint;
+  withdrawCommission: () => void;
+  drawWinner: () => void;
+  restartDraw: () => void;
+  refundAll: () => void;
+};
+
+
+export default function AdminControls({operatorTotalCommission, withdrawCommission, drawWinner,  restartDraw, refundAll}: AdminControlsProps) {
   const currency = "USDT";
 
   function formatUSDT(amount: bigint) {
@@ -10,6 +18,8 @@ export default function AdminControls({operatorTotalCommission, withdrawCommissi
     const formatted = Number(amount) / Number(divisor); 
     return formatted.toFixed(2); 
   }
+
+  console.log(operatorTotalCommission)
 
   return (
     <div className="relative flex items-center justify-center w-full max-w-md">

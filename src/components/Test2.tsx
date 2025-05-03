@@ -12,7 +12,6 @@ export default function Test2({getTickets, address, buyTickets}:Test1Props) {
   const pricePerTicket: number = 10.00;
   const serviceFee: number = 0;
   const currency: string = "USDT";
-  const userTickets: number = 8;
 
   const totalCost: string = (ticketCount * pricePerTicket).toFixed(2);
 
